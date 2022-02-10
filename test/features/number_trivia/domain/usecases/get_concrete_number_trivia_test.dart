@@ -24,7 +24,7 @@ void main() {
     when(() => mockNumberTriviaRepository.getConcreteNumberTrivia(any()))
         .thenAnswer((_) async => const Right(tNumberTrivia));
 
-    final result = await usecase.execute(number: tNumber);
+    final result = await usecase(number: tNumber);
 
     expect(result, const Right(tNumberTrivia));
     // verify that the method has been called on the repository
